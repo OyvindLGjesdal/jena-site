@@ -2,9 +2,5 @@
         {
             "pattern": "^/",
             "replacement": "https://jena.apache.org/"
-        },
-        {
-            "pattern": "^([^:]+)$",
-            "replacement: "https://jena.apache.org/$1"
-        } 
-    ],
+        }
+    ]
