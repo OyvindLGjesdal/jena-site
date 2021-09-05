@@ -1,6 +1,7 @@
-"replacementPatterns": [
+{ "replacementPatterns": [
         {
             "pattern": "^/",
             "replacement": "https://jena.apache.org/"
         }
     ]
+}
