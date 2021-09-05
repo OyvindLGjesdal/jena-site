@@ -1,11 +1,10 @@
-{ "replacementPatterns": [
+{
+                ignorePatterns: [{ pattern: "^([^:]+)$" }],
+
+ "replacementPatterns": [
         {
             "pattern": "^/",
             "replacement": "https://jena.apache.org/"
-        },
-        {
-            "pattern": "^([^:]+)$",
-            "replacement": "https://jena.apache.org/{{BASEURL}}/$1"
         }
 
     ]
