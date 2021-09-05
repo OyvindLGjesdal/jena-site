@@ -5,7 +5,7 @@
         },
         {
             "pattern": "^([^:]+)$",
-            "replacement": "https://jena.apache.org/$1"
+            "replacement": "https://jena.apache.org/{{BASEURL}}/$1"
         }
 
     ]
