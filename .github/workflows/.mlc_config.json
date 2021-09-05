@@ -4,7 +4,7 @@
             "replacement": "https://jena.apache.org/"
         },
         {
-            "pattern": "^([^:@]+)$",
+            "pattern": "^([^:]+)$",
             "replacement: "https://jena.apache.org/$1"
         } 
     ],
