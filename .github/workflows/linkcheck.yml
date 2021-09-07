@@ -9,6 +9,6 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Link Checker
-        uses: oyvindlgjesdal/lychee-action@ v.1.0.9-alpha
+        uses: oyvindlgjesdal/lychee-action@v.1.0.9-alpha
         with:
           args: --verbose --no-progress source/**/*.md --exclude-all-private --exclude-file .github/workflows/ignore-links.txt
