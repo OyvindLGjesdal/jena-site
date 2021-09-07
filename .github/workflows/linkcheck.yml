@@ -9,6 +9,6 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Link Checker
-        uses: oyvindlgjesdal/lychee-action@v1.0.8
+        uses: oyvindlgjesdal/lychee-action@latest
         with:
-          args: --verbose --no-progress source/**/*.md
+          args: --verbose --no-progress source/**/*.md --exclude-all-private
