@@ -1,0 +1,16 @@
+oot@my-assembly.ttl
+http://localhost
+http://localhost:3030
+http://.../JohnSmith
+http://host/triplestore
+http://example/
+http://example.org/
+http://z/
+http://jena.hpl.hp.com/2005/11/Assembler#
+http://jena.hpl.hp.com/2003/DIGReasoner
+http://jena.hpl.hp.com/prefix#&gt
+http://jena.hpl.hp.com/2007/
+file://
+http://jena.apache.org/2016/tdb#
+http://jena.apache.org/fuseki#
+http://jena.apache.org/ARQ/function#
