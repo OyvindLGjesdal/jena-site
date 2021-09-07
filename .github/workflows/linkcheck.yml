@@ -11,4 +11,4 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.0.8
         with:
-          args: --base-url https://jena.apache.org --verbose --no-progress source/**/*.md
+          args: --verbose --no-progress source/**/*.md
