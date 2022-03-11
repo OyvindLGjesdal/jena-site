@@ -19,6 +19,16 @@ http://example.com/examples#
 http://example.com/val
 http://x.com/foo
 http://apache.org/jena/permissions/Assembler#
+http://somewhere/else#
+http://somewhere/else#z
+http://somewhere/else#x
+http://somewhere/else#y
+http://somewhere/else#root
+John@somewhere.com
+http://hostname/rdf/tutorial/#ch-Introduction
+http://nowhere/else#
+http://somewhere/JohnSmith
+http://...johnsmith/
 http://somewhere/peopleInfo#
 http://somewhere/RebeccaSmith/
 http://somewhere/MattJones/
@@ -30,3 +40,7 @@ http://jena.apache.org/fuseki#
 http://jena.apache.org/ARQ/function#
 http://apache.org/jena/permissions/Assembler#
 https://example.org/securedModel
+http://somewhere/MattJones
+http://somewhere/RebeccaSmith
+http://somewhere/AdamJones
+http://somewhere/SarahJones
