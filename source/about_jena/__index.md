@@ -11,7 +11,7 @@ Welcome to the Apache Jena project! Jena is a Java framework for building
 Semantic Web applications.
 Jena provides a collection of tools and Java libraries to help you
 to develop [semantic web](http://www.w3.org/2001/sw/) and
-[linked-data](http://linkeddata.org/) apps, tools and servers.
+[linked-data](https://web.archive.org/web/20190428012146/http://linkeddata.org/) apps, tools and servers.
 
 The Jena Framework includes:
 
