@@ -6,8 +6,10 @@ slug: index
 `jena-shacl` is an implementation of the 
 W3C [Shapes Constraint Language (SHACL)](https://www.w3.org/TR/shacl/).
 It implements SHACL Core and SHACL SPARQL Constraints.
-It also provides a reader and writer for 
-[SHACL Compact Syntax](https://w3c.github.io/shacl/shacl-compact-syntax/).
+
+In addition, it provides:
+* [SHACL Compact Syntax](#shacl-compact-syntax)
+* [SPARQL-based targets](#sparql-based-targets)
 
 ## Command line
 
@@ -40,7 +42,7 @@ separated by "," and format `all` outputs all 3 formats.
 Fuseki has a new service operation `fuseki:shacl`:
 
 <pre>
-&lt;#serviceInMemoryShacl&gt; rdf:type fuseki:Service ;
+&lt;#serviceWithShacl&gt; rdf:type fuseki:Service ;
     rdfs:label                   "Dataset with SHACL validation" ;
     fuseki:name                  "<i>ds</i>" ;
     fuseki:serviceReadWriteGraphStore "" ;
@@ -90,7 +92,7 @@ The package `org.apache.jena.shacl` has the main classes.
 
 ## API Examples
 
-https://github.com/apache/jena/tree/main/jena-shacl/src/main/java/org/apache/jena/shacl/examples
+https://github.com/apache/jena/tree/main/jena-examples/src/main/java/shacl/examples/
 
 Example
 [`Shacl01_validateGraph`](
@@ -138,3 +140,33 @@ exception and data in the RDF graph that is not relevant will not be output. In
 other words, SHACL-C is a lossy format for RDF.
 
 The Jena SHACL-C writer will output any valid SHACL-C document.
+
+Extensions:
+
+* The `constraint` grammar rule allows a shape reference to a node shape.
+* The `propertyParam` grammar rule provides "group", "order", "name",
+  "description" and "defaultValue" to align with `nodeParam`.
+* The `nodeParam` grammar rule supports "targetClass" (normally written 
+  with the shorthand `->`) as well as the defined
+  "targetNode", "targetObjectsOf", "targetSubjectsOf"
+
+## SPARQL-based targets
+
+SPARQL-based targets allow the target nodes to be calculated with a SPARQL
+`SELECT` query.
+
+See [SPARQL-based targets](https://w3c.github.io/shacl/shacl-af/#SPARQLTarget)
+for details.
+
+```
+ex:example
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            SELECT ?this
+            WHERE {
+              ...
+            }
+            """ ;
+    ] ;
+```

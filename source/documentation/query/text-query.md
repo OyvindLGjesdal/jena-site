@@ -4,7 +4,6 @@ title: Jena Full Text Search
 
 This extension to ARQ combines SPARQL and full text search via
 [Lucene](https://lucene.apache.org).
-[ElasticSearch](https://www.elastic.co) 
 It gives applications the ability to perform indexed full text
 searches within SPARQL queries. Here is a version compatibility table:
 
@@ -14,7 +13,7 @@ searches within SPARQL queries. Here is a version compatibility table:
 | 3.3.0 - 3.9.0    | 6.4.x              | not supported     | 5.2.2 - 5.2.13 |
 | 3.10.0           | 7.4.0              | not supported     | 6.4.2          |
 | 3.15.0 - 3.17.0  | 7.7.x              | not supported     | 6.8.6          |
-| 4.0.0            | 8.8.x              | not supported     | not supported  |
+| 4.0.0 - current  | 8.8.x              | not supported     | not supported  |
 
 SPARQL allows the use of 
 [regex](https://www.w3.org/TR/2013/REC-sparql11-query-20130321/#func-regex) 
@@ -782,7 +781,6 @@ The following is an example of an assembler file defining a TDB dataset with a L
         fuseki:name                       "myds" ;     # e.g : `s-query --service=http://localhost:3030/myds "select * ..."`
         fuseki:serviceQuery               "query" ;    # SPARQL query service
         fuseki:serviceUpdate              "update" ;   # SPARQL update service
-        fuseki:serviceUpload              "upload" ;   # Non-SPARQL upload service
         fuseki:serviceReadWriteGraphStore "data" ;     # SPARQL Graph store protocol (read and write)
         fuseki:dataset                    :text_dataset ;
         .
@@ -1711,7 +1709,6 @@ The Fuseki configuration simply points to the text dataset as the
         fuseki:serviceQuery             "query" ;
         fuseki:serviceQuery             "sparql" ;
         fuseki:serviceUpdate            "update" ;
-        fuseki:serviceUpload            "upload" ;
         fuseki:serviceReadGraphStore    "get" ;
         fuseki:serviceReadWriteGraphStore    "data" ;
         fuseki:dataset                  :text_dataset ;

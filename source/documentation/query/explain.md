@@ -1,11 +1,6 @@
 ---
-title: explaining ARQ queries
+title: Explaining ARQ queries
 ---
-
-*This page applies to ARQ version 2.8.6 and later. In this version query
-logging was consolidated and made uniform across ARQ, SDB and TDB.
-Details of TDB logging changed to use this logging and explanation
-framework from TDB version 0.8.8.*
 
 Optimization in ARQ proceeds on two levels. After the query is parsed,
 the SPARQL algebra for the query is generated as described in the SPARQL
@@ -79,8 +74,7 @@ globally:
 and it may also be set on an individual query execution using its local
 context.
 
-     try(QueryExecution qExec = QueryExecutionFactory.create(...)) {
-         qExec.getContext().set(ARQ.symLogExec, Explain.InfoLevel.ALL) ;
+     try(QueryExecution qExec = QueryExecution.create() ... .set(ARQ.symLogExec, Explain.InfoLevel.ALL).build() ) {
          ResultSet rs = qExec.execSelect() ;
          ...
      }

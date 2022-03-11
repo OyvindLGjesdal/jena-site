@@ -7,13 +7,22 @@ fashion. Streaming can be used for manipulating RDF at scale.  Jena
 provides high performance readers and writers for all standard RDF formats,
 and it can be extended with custom formats.
 
-The [RDF Binary using Apache Thrift](rdf-binary.html) provides the highest
-input parsing performance.  N-Triples/N-Quads provide the highest
+The [RDF Binary](rdf-binary.html) provides the highest
+input parsing performance. N-Triples/N-Quads provide the highest
 input parsing performance using W3C Standards.
 
 Files ending in `.gz` are assumed to be gzip-compressed. Input and output
 to such files takes this into account, including looking for the other file
 extension.  `data.nt.gz` is parsed as a gzip-compressed N-Triples file.
+
+Jena does not support all possible compression formats itself, only
+GZip and BZip2 are supported directly.  If you want to use an 
+alternative compression format you can do so by adding suitable dependencies
+into your project and passing an appropriate `InputStream`/`OutputStream` 
+implementation to Jena code e.g.
+
+    InputStream input =  new ZstdCompressorInputStream(....);
+    RDFParser.source(input).lang(Lang.NQ).parse(graph);
 
 ## StreamRDF
 
@@ -105,3 +114,4 @@ N-Triples and N-Quads are always written as a stream.
 | `RDFFormat.NQUADS_ASCII`   |                  |
 | `RDFFormat.TRIX`           | `Lang.TRIX`      |
 | `RDFFormat.RDF_THRIFT`     | `Lang.RDFTHRIFT` |
+| `RDFFormat.RDF_PROTO`      | `Lang.RDFPROTO`  |

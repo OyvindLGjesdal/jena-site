@@ -83,7 +83,6 @@
                         <li><a href="/documentation/shex/index.html">ShEx</a></li>
                         <li><a href="/documentation/rdfstar/index.html">RDF-star</a></li>
                         <li><a href="/documentation/tools/index.html">Command-line tools</a></li>
-                        <li><a href="/documentation/hadoop/index.html">Elephas - tools for RDF on Hadoop</a></li>
                         <li><a href="/documentation/jdbc/index.html">SPARQL over JDBC</a></li>
                         <li><a href="/documentation/permissions/index.html">Permissions</a></li>
                         <li><a href="/documentation/assembler/index.html">Assembler</a></li>
@@ -121,6 +120,7 @@
                         <li class="divider"></li>
                         <li class="dropdown-header">Project</li>
                         <li><a href="/about_jena/about.html">About Jena</a></li>
+                        <li><a href="/about_jena/citing.html">Citing</a></li>
                         <li><a href="/about_jena/roadmap.html">Roadmap</a></li>
                         <li><a href="/about_jena/architecture.html">Architecture</a></li>
                         <li><a href="/about_jena/team.html">Project team</a></li>
@@ -134,8 +134,14 @@
                         <li><a href="http://www.apache.org/security/">Security</a></li>
                     </ul>
                 </li>
-
-                <li id="edit"><a href="{{ .Site.Params.siteRepositoryUrl }}/edit/{{ .Site.Params.siteRepositorySourceBranch }}/source/{{ .Page.Path }}" title="Edit this page on GitHub"><span class="glyphicon glyphicon-pencil"></span> Edit this page</a></li>
+{{/* Fixup for Hugo warning : was .Page.Path */ -}}
+{{ $path := "" }}
+{{ with .File }}
+    {{ $path = .Path }}
+{{ else }}
+    {{ $path = .Path }}
+{{ end }}
+                <li id="edit"><a href="{{ .Site.Params.siteRepositoryUrl }}/edit/{{ .Site.Params.siteRepositorySourceBranch }}/source/{{ $path }}" title="Edit this page on GitHub"><span class="glyphicon glyphicon-pencil"></span> Edit this page</a></li>
             </ul>
         </div>
     </div>

@@ -3,8 +3,13 @@
 target/
 
 .vscode
+.#*
+.hugo*
 
 # IntelliJ generated
 *.iml
 .idea
 .java-version
+
+# Hugo
+.hugo_build.lock

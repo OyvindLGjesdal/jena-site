@@ -7,7 +7,7 @@ modify query execution within ARQ. Through these mechanisms, ARQ
 can be used to query different graph implementations and to provide
 different query evaluation and optimization strategies for
 particular circumstances. These mechanisms are used by
-[TDB](../tdb) and [SDB](../sdb/).
+[TDB](../tdb).
 
 ARQ can be [extended in various ways](extension.html) to
 incorporate custom code into a query.
@@ -31,8 +31,8 @@ For higher SPARQL performance, ARQ can be extended at the
 
 Applications writers who extend ARQ at the query execution level
 should be prepared to work with the source code for ARQ for
-specific details and for finding code to reuse. Some example can be
-found in the `src-examples` directory in the ARQ download.
+specific details and for finding code to reuse. Some examples can be
+found [arq/examples directory](https://github.com/apache/jena/tree/main/jena-examples/src/main/java/arq/examples/) 
 
 -   [Overview of ARQ Query processing](#overview-of-arq-query-processing)
 -   [The Main Query Engine](#the-main-query-engine)
@@ -182,15 +182,15 @@ The steps from algebra generation to query evaluation are carried
 out when a query is executed via the `QueryExecution.execSelect` or
 other `QueryExecution` exec operation. It is possible to carry out
 storage-specific operations when the query execution is created. A
-query engine works in conjunction with a `QueryExecution` created
-by the `QueryExecutionFactory` to provide the evaluation of a query
+query engine works in conjunction with a `QueryExecution`
+to provide the evaluation of a query
 pattern. `QueryExecutionBase` provides all the machinery for the
 different result types and does not need to be modified by
 extensions to query execution.
 
 ARQ provides three query engine factories; the main query engine
 factory, one for a reference query engine and one to remotely
-execute a query. SDB and TDB provide their own query engine
+execute a query. TDB provides its own query engine
 factories which they register during sub-system initialization.
 Both extend the main query engine described below.
 
@@ -230,8 +230,8 @@ called to return a `Plan` object for the execution. The main
 operation of the `Plan` interface is to get the `QueryIterator` for
 the query.
 
-See the example in
-`src-examples/arq.examples.engine.MyQueryEngine`.
+See the example `arq.examples.engine.MyQueryEngine` at
+[jena-examples:arq/examples](https://github.com/apache/jena/tree/main/jena-examples/src/main/java/arq/examples/).
 
 ## The Main Query Engine
 
@@ -363,7 +363,8 @@ has a convenience operation to do this):
       StageBuilder.setGenerator(ARQ.getContext(), myStageGenerator) ;
 
 
-Example: `src-examples/arq.examples.bgpmatching`.
+Example:
+[jena-examples:arq/examples/bgpmatching](https://github.com/apache/jena/tree/main/jena-examples/src/main/java/arq/examples/bgpmatching/)
 
 ## OpExecutor
 
@@ -446,7 +447,6 @@ custom query engine and overriding `QueryEngineMain.modifyOp`:
       @Override
       protected Op modifyOp(Op op)
       {
-         // Cope with initial bindings.
          op = Substitute.substitute(op, initialInput) ;
          // Use standard optimizations.
          op = super.modifyOp(op) ;
@@ -457,7 +457,7 @@ custom query engine and overriding `QueryEngineMain.modifyOp`:
 
 The extension may need to provide its own dataset implementation so
 that it can detect when queries are directed to its named graph
-storage. [TDB](../tdb/) and [SDB](../sdb/) are examples of this.
+storage. [TDB](../tdb/) are examples of this.
 
 ## Mixed Graph Implementation Datasets
 
@@ -484,14 +484,14 @@ Generator or a combination of all three extension mechanism.
 
 Only a small, skeleton custom query engine is needed to intercept
 the initial setup. See the example in
-`src-examples/arq.examples.engine.MyQueryEngine`.
+[jena-examples:arq/examples](https://github.com/apache/jena/tree/main/jena-examples/src/main/java/arq/examples/)
+`arq.examples.engine.MyQueryEngine`.
 
 While it is possible to replace the entire process of query
 evaluation, this is a substantial endeavour. `QueryExecutionBase`
 provides the machinery for result presentation (`SELECT`,
 `CONSTRUCT`, `DESCRIBE`, `ASK`), leaving the work of pattern
-evaluation to the custom query engine. `QueryExecutionFactory`
-assumes that `QueryExecutionBase` will be used.
+evaluation to the custom query engine.
 
 ## Algebra Extensions
 
@@ -500,5 +500,4 @@ as the super-class of the new operator. They can be inserted into
 the expression to be evaluated using a custom query engine to
 intercept evaluation initialization.  When evaluation of a query
 requires the evaluation of a sub-class of `OpExt`, the `eval`
-method is called. SDB uses this to introduce an operator that is
-implemented in SQL.
+method is called.

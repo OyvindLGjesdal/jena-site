@@ -105,7 +105,8 @@ on the default graph. For instance:
     // The part of "GRAPH ?g1 { ?s1 ?p1 ?o1 }" will be ignored. Only "?s ?p ?o" in the default graph will be returned.
     Iterator<Triple> triples = qexec.execConstructTriples();
 
-More examples can be found at `ExampleConstructQuads.java` under `jena-arq/src-examples`
+More examples can be found at `ExampleConstructQuads.java` at
+[jena-examples:arq/examples/constructquads/](https://github.com/apache/jena/tree/main/jena-examples/src/main/java/arq/examples/constructquads/).
 
 ## Fuseki Support
 
@@ -119,7 +120,7 @@ previous sections, e.g.
 
     String queryString = " CONSTRUCT { GRAPH <http://example/ns#g1> {?s ?p ?o} } WHERE {?s ?p ?o}" ;
     Query query = QueryFactory.create(queryString, Syntax.syntaxARQ);
-    try ( QueryExecution qExec = QueryExecutionFactory.sparqlService(serviceQuery, query) ) { // serviceQuery is the URL of the remote service
+    try ( QueryExecution qExec = QueryExecution.service(serviceQuery).query(query).build() ) { // serviceQuery is the URL of the remote service
         Iterator<Quad> result = qExec.execConstructQuads();
         ...
     }

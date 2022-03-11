@@ -45,6 +45,7 @@ transactional persistent storage layer, and incorporates
 - Client access
     - [Use from Java](../rdfconnection)
     - [SPARQL Over HTTP](soh.html) - scripts to help with data management.
+- Extending Fuseki with [Fuseki Modules](fuseki-modules.html)
 - [Links to Standards](rdf-sparql-standards.html)
 
 The Jena users mailing is the place to get help with Fuseki.
@@ -122,20 +123,20 @@ Development builds (not a formal release):
 Source code:
 [https://github.com/apache/jena/tree/main/jena-fuseki2](https://github.com/apache/jena/tree/main/jena-fuseki2)
 
-The Fuseki module are under "jena-fuseki2/":
+The Fuseki code is under "jena-fuseki2/":
 
-| Fuseki Module | Purpose |
-|---------------|-|
+| Code | Purpose |
+|---------------|--|
 | jena-fuseki-core | The Fuseki engine. All SPARQL operations.
-| <b>Webapp </b> | |
-| jena-fuseki-webapp | Web application and command line startup |
-| jena-fuseki-fulljar | Build the combined jar for Fuseki/UI server |
-| jena-fuseki-war | Build the war file for  Fusek/UI server |
-| apache-jena-fuseki | The download for Fuskei |
 | <b>Fuseki/Main</b> | |
-| jena-fuseki-main | Embedded server and command line 
+| jena-fuseki-main   | Embedded server and command line 
 | jena-fuseki-server | Build the combined jar for Fusek/main server |
 | jena-fuseki-docker | Build a docker conntained based on Fusek/main |
-| <b>Other</b> | |
-| jena-fuseki-access | [Data access control](fuseki-data-access-control.html) |
+| <b>Webapp </b>     | |
+| jena-fuseki-webapp | Web application and command line startup |
+| jena-fuseki-fulljar | Build the combined jar for Fuseki/UI server |
+| jena-fuseki-war     | Build the war file for  Fusek/UI server |
+| apache-jena-fuseki  | The download for Fuskei |
+| <b>Other</b>        | |
+| jena-fuseki-access    | [Data access control](fuseki-data-access-control.html) |
 | jena-fuseki-geosparql | Integration for GeoSPARQL |

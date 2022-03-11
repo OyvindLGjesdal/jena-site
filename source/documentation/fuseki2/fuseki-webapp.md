@@ -26,17 +26,16 @@ To publish at <tt>http://<i>host</i>:3030/NAME</i></tt>:
 
 where `/NAME` is the dataset publishing name at this server in URI space.
 
-TDB1 database:
+TDB2 database:
 
     fuseki-server [--loc=DIR] [[--update] /NAME]
 
-The argument `--tdb2` puts the command line handling into "TDB2 mode".
-A dataset created with `--loc` is a TDB2 dataset.
-TDB2 database:
+The `--loc` directory is either a TDB1 or TDB2 database. 
+The directory `DIR` must exist.
+If the database in `DIR` does not exist, then a new database is created. By
+default this is a TDB2 database unoess teh argument --tdb1 is given.
 
-    fuseki-server --tdb2 [--loc=DIR] [[--update] /NAME]
-
-In-memory, non-peristent database (always updatable):
+An in-memory, non-peristent database (always updatable) is:
 
     fuseki-server --mem /NAME
 
@@ -44,7 +43,7 @@ Load a file at start and provide it read-only:
 
     fuseki-server --file=MyData.ttl /NAME
 
-where "MyData.ttl" can be any RDF format, both triples or quads. 
+where `MyData.ttl` can be any RDF format, both triples or quads. 
 
 Administrative functions are only available from "localhost".
 
@@ -79,9 +78,12 @@ where the distribution was unpacked.
 ## Fuseki as a Web Application {#fuseki-web-application}
 
 Fuseki can run from a
-[WAR](http://en.wikipedia.org/wiki/WAR_%28file_format%29) file.  Fuseki
-requires at least support for the Servlet 3.0 API (e.g. Apache Tomcat 7 or
-Jetty 8) as well as Java8.
+[WAR](http://en.wikipedia.org/wiki/WAR_%28file_format%29) file. 
+
+The war file can be downloaded from the [project downloads page](/download/). It
+should then be renamed to the webapp name "ROOT.war" (this means there no name
+in the URL) or "fuseki.war" (with a name `/fuseki/`) or some other choice of
+name.
 
 `FUSEKI_HOME` is not applicable.
 
