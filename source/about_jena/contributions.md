@@ -18,10 +18,10 @@ Jira issue with the details to be published.
 Name | Description | License | Creator | URL
 ---- | ----------- | ------- | ------- | ---
 GeoSPARQL Jena | Implementation of GeoSPARQL 1.0 standard using Apache Jena for SPARQL query or API. | Apache 2.0 | Greg Albiston and Haozhe Chen | [geosparql-jena at GitHub](https://github.com/galbiston/geosparql-jena)
-GeoSPARQL Fuseki | HTTP server application compliant with the GeoSPARQL standard using GeoSPARQL Jena library and Apache Jena Fuseki server | Apache 2.0 | Greg Albiston | [geosparql-fuseki at GitHub](https://github.com/galbiston/geosparql-fuskei)
+GeoSPARQL Fuseki | HTTP server application compliant with the GeoSPARQL standard using GeoSPARQL Jena library and Apache Jena Fuseki server | Apache 2.0 | Greg Albiston | [geosparql-fuseki at GitHub](https://github.com/galbiston/geosparql-fuseki)
 Jastor | Code generator that emits Java Beans from OWL Web Ontologies | Common Public License | Ben Szekely and Joe Betz | [Jastor website](http://jastor.sourceforge.net)
 NG4J | Named Graphs API for Jena | BSD license |Chris Bizer | [NG4J website](http://wifo5-03.informatik.uni-mannheim.de/bizer/ng4j/)
-Micro Jena (uJena) | Reduced version of Jena for mobile devices | as per Jena | Fulvio Crivellaro and Gabriele Genovese and Giorgio Orsi | [Micro Jena](http://poseidon.elet.polimi.it/ca/?page_id=59)
+Micro Jena (uJena) | Reduced version of Jena for mobile devices | as per Jena | Fulvio Crivellaro and Gabriele Genovese and Giorgio Orsi | [Micro Jena](https://web.archive.org/web/20150623050044/http://poseidon.ws.dei.polimi.it/ca/?page_id=59)
 Gloze | XML to RDF, RDF to XML, XSD to OWL mapping tool | as per Jena | Steve Battle | [jena files page](http://sourceforge.net/project/showfiles.php?group_id=40417)
 WYMIWYG KnoBot | A fully Jena based semantic CMS. Implements URIQA. File-based persistence. | Apache | Reto Bachmann-Gmuer / wymiwyg.org | [Download KnoBot](http://sourceforge.net/project/showfiles.php?group_id=83223)
 Infinite Graph | An infinite graph implementation for RDF graphs | BSD | UTD | [Infinite Graph for Jena](http://ig.semanticsupport.org/)
