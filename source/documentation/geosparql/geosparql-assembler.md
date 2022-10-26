@@ -4,17 +4,17 @@ title: GeoSPARQL Assembler
 
 Details of the GeoSPARQL support are proivded on the [GeoSPARQL page](index).
 
-The assembler for GeoSPARQL support is part of the `jena-geosparql` artifact and
+The assembler for GeoSPARQL support is part of the `jena-fuseki-geosparql` artifact and
 must be on the Fuseki server classpath, along with its dependencies.
 
     <dependency>
       <groupId>org.apache.jena</groupId>
-      <artifactId>jena-geosparql</artifactId>
+      <artifactId>jena-fuseki-geosparql</artifactId>
       <version>...</version>
     </dependency>
 
 or download the binary from the 
-[Maven central repository org/apache/jena/jena-geosparql](https://repo1.maven.org/maven2/org/apache/jena/jena-geosparql/)
+[Maven central repository org/apache/jena/jena-fuseki-geosparql](https://repo1.maven.org/maven2/org/apache/jena/jena-fuseki-geosparql/)
 
 The GeoSPARQL assembler can be used in a Fuseki configuration file.
 
