@@ -26,11 +26,11 @@ It executes as a single remote request to Wikidata:
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wd: <http://www.wikidata.org/entity/>
 SELECT ?s ?l {
+  SERVICE <cache:loop:bulk+5:https://query.wikidata.org/sparql> {
   # The ids below correspond in order to: Apache Jena, Semantic Web, RDF, SPARQL, Andy Seaborne
   VALUES ?s { wd:Q1686799 wd:Q54837 wd:Q54872 wd:Q54871 wd:Q108379795 }
- 
-  SERVICE <cache:loop:bulk+5:https://query.wikidata.org/sparql> {
-    SELECT ?l {
+
+  SELECT ?l {
       ?s rdfs:label ?l
       FILTER(langMatches(lang(?l), 'en'))
     } ORDER BY ?l LIMIT 1
