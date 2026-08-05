@@ -12,12 +12,32 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      # Same Hugo version as the Jenkins deployment pipeline (see Jenkinsfile)
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.147.0'
+          extended: true
+
+      - name: Build site
+        run: hugo --destination target/content
+
+      # Links are checked against the generated site, so relative links resolve
+      # against the real page layout. --base-url cannot be used here: it ignores
+      # the folder structure of the source files.
       - name: Link Checker
         id: lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          args:  --verbose --base-url "https://jena.apache.org/" --no-progress source/**/*.md --exclude-all-private --exclude-file .github/workflows/ignore-links.txt
-          fail: false
+            args: >-
+              --verbose --no-progress
+              --root-dir "${{ github.workspace }}/target/content"
+              --index-files index.html
+              --fallback-extensions html
+              --exclude-all-private
+              --exclude-file .github/workflows/ignore-links.txt
+              'target/content/**/*.html'
+            fail: false
 
       - name: Create Issue From File
         if: steps.lychee.outputs.exit_code != 0
