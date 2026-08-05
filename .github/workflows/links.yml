@@ -34,6 +34,7 @@ jobs:
               --root-dir "${{ github.workspace }}/target/content"
               --index-files index.html
               --fallback-extensions html
+              --remap "file://${{ github.workspace }}/target/content/documentation/javadoc https://jena.apache.org/documentation/javadoc"
               --exclude-all-private
               --exclude-file .github/workflows/ignore-links.txt
               'target/content/**/*.html'
